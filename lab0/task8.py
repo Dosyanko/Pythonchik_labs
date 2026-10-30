@@ -1,13 +1,15 @@
 import random
 
-code=random.randint(1,100)
+code = random.randint(1, 100)
 
 while True:
-    guess=input("Make your guess: ")
+    guess = input("Make your guess: ")
 
-    if guess < code:
+    guess_int = int(guess)
+
+    if guess_int < code:
         print("Less")
-    elif guess > code:
+    elif guess_int > code:
         print("Larger")
     else:
         print("Thats right")

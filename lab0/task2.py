@@ -1,8 +1,13 @@
-password=input("Enter your password: ")
+def password_check(password: str) -> str:
+    if len(password) < 16:
+        return "Too short"
+    elif password.isalpha() or password.isdigit():
+        return "Weak password"
+    else:
+        return "Strong password"
 
-if len(password) < 16:
-    print("Too short")
-elif password.isalpha() or password.isdigit():
-    print("Weak password")
-else:
-    print("Strong password")    
+
+if __name__ == "__main__":
+    password = input("Enter your password: ")
+
+    print(password_check(password))
