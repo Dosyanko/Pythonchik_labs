@@ -32,13 +32,13 @@ def main() -> None:
 
                 if st is None:
                     st = stats[station] = [temp_int, temp_int, temp_int, 1]
-                else:
-                    if temp_int < st[0]:
-                        st[0] = temp_int
-                    if temp_int > st[1]:
-                        st[1] = temp_int
-                    st[2] += temp_int
-                    st[3] += 1
+
+                if temp_int < st[0]:
+                    st[0] = temp_int
+                if temp_int > st[1]:
+                    st[1] = temp_int
+                st[2] += temp_int
+                st[3] += 1
 
     except (FileNotFoundError, IOError, PermissionError) as e:
         print(f"File opening error: {e}", file=sys.stderr)
